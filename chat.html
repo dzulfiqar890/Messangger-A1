@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+        }
+
+        .chat-container {
+            width: 360px;
+            height: 640px;
+            max-width: 400px;
+            border: 1px solid #1a202c;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-header {
+            background-color: #1a202c;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .chat-box {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .chat-box .message {
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 70%;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .chat-box .message.user {
+            background-color: #d1e7ff;
+            align-self: flex-end;
+        }
+
+        .chat-box .message.bot {
+            background-color: #f2f2f2;
+            align-self: flex-start;
+        }
+
+        .chat-input {
+            display: flex;
+            border-top: 1px solid #0077cc;
+            background-color: #ffffff;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .chat-input button {
+            padding: 15px;
+            background-color: #0077cc;
+            color: #ffffff;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .chat-input button:hover {
+            background-color: #005fa3;
+        }
+
+        .chat-fiqar {
+            font-size: 1rem;
+            margin: 10px 0;
+            color: #0077cc;
+        }
+        .message-form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 10px;
+        }
+        input{
+            padding: 7px;
+            border: #1a202c solid 1px;
+            border-radius: 5px;
+            margin-right: 7px;
+            width: 280px;
+        }
+        button{
+            padding: 7px;
+            border-radius: 5px;
+            background-color: #1a202c;
+            color: white;
+        }
+        .chat-fiqar{
+            font-size: 1rem;
+            margin-left: 10px;
+            margin-right: 10px;
+            background-color: #dfdfdf;
+            padding: 4px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <a style="color: greenyellow; font-size: 1rem; " href="index.html" > back</a>
+            <h2>QarChat</h2>
+        </header>
+        <h6 class="chat-fiqar">Halo Fiqar!</h6>
+        <div class="chat-box" id="chat-box"></div>
+        <form class="message-form" id="message-form">
+            <input type="text" id="message-input" placeholder="Type a message" required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
